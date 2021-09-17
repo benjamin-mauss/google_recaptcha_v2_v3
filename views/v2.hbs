@@ -1,0 +1,20 @@
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+<h1>{{title}}</h1>
+<p>Welcome to v2</p>
+<script>
+    function recaptchaCallbackV2() {
+         document.getElementById("submitBtn").removeAttribute('disabled');
+    };
+    function recaptchaCallbackExpiredV2(){
+         document.getElementById("submitBtn").setAttribute('disabled');
+    }
+</script>
+<form action="v2?" method="POST">
+      <div class="g-recaptcha" data-callback="recaptchaCallbackV2" data-expired-callback="recaptchaCallbackExpiredV2" data-sitekey="{{recaptcha_public_key}} " ></div>
+      <br/>
+      <input id="submitBtn" type="submit" value="Submit" disabled>
+ </form>
+
+ <a href="/v3">Go to v3</a>
+

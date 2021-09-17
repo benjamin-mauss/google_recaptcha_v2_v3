@@ -1,0 +1,26 @@
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+<h1>{{title}}</h1>
+<p>Welcome v3</p>
+<script>
+    function recaptchaCallbackV3() {
+        document.getElementById("demo-form").submit();
+
+         //document.getElementById("submitBtn").removeAttribute('disabled');
+    };
+    function recaptchaCallbackExpiredV3(){
+         //document.getElementById("submitBtn").setAttribute('disabled');
+    }
+</script>
+<form action="v3?" id="demo-form" method="POST">
+      <br/>
+      
+      <button class="g-recaptcha" 
+        data-sitekey="{{recaptcha_public_key}}"
+        data-callback='recaptchaCallbackV3' 
+        data-expired-callback="recaptchaCallbackExpiredV3" 
+        data-action='submit'>Submit</button>
+ </form>
+
+<a href="/v2">Go to v2</a>
+
